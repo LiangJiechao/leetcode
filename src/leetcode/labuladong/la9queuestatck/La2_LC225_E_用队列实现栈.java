@@ -1,0 +1,54 @@
+package leetcode.labuladong.la9queuestatck;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**
+ * 请你仅使用两个队列实现一个后入先出（LIFO）的栈，并支持普通栈的全部四种操作（push、top、pop 和 empty）。
+ * 实现 MyStack 类：
+ * void push(int x) 将元素 x 压入栈顶。
+ * int pop() 移除并返回栈顶元素。
+ * int top() 返回栈顶元素。
+ * boolean empty() 如果栈是空的，返回 true ；否则，返回 false
+ *
+ * @author xiaoliang
+ * @date 2022/02/25 11:45
+ **/
+public class La2_LC225_E_用队列实现栈 {
+
+    class MyStack {
+        Queue<Integer> queue;
+        int topItem;// 栈头元素（队尾元素）
+
+        public MyStack() {
+            queue = new LinkedList<>();
+            topItem = 0;
+        }
+
+        public void push(int x) {
+            queue.offer(x);
+            topItem = x;
+        }
+
+        public int pop() {
+            int size = queue.size();
+            while (size > 2) {
+                queue.offer(queue.poll());
+                size--;
+            }
+            // 记录新的队尾元素
+            topItem = queue.peek();
+            queue.offer(queue.poll());
+            return queue.poll();
+
+        }
+
+        public int top() {
+            return topItem;
+        }
+
+        public boolean empty() {
+            return queue.isEmpty();
+        }
+    }
+}
