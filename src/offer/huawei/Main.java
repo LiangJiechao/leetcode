@@ -19,6 +19,7 @@ package offer.huawei;
  **/
 public class Main {
 
+
     public static void main(String[] args) {
         int[] nums = {-2,0,-1};
         System.out.println(new Main().maxProduct(nums));

@@ -46,7 +46,8 @@ public class La2_LC518_M_零钱兑换II {
         return dp[coins.length][amount];
     }
 
-    // 压缩空间，一般用大的来作为dp数组的长度，一般是 j 遍历dp[j]
+    // 压缩空间
+    // 需要先遍历硬币，再遍历金额
     public int change2(int amount, int[] coins) {
 
         int[] dp = new int[amount + 1];

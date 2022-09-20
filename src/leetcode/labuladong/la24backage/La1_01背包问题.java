@@ -19,7 +19,7 @@ public class La1_01背包问题 {
 
                 if (j - weights[i - 1] >= 0) {
                     // 当放入了第 i个物品后，剩下的重量是当前i-1个物品时的重量
-                    // `dp[i - 1]`[j - weights[i - 1]] + values[i - 1]这里i-1是因为硬币可重复
+                    // `dp[i - 1]`[j - weights[i - 1]] + values[i - 1]这里i-1是因为物品不可重复
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weights[i - 1]] + values[i - 1]);
                 } else {
                     dp[i][j] = dp[i - 1][j];

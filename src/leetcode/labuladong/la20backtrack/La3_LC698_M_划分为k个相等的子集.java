@@ -48,8 +48,10 @@ public class La3_LC698_M_划分为k个相等的子集 {
 
         int[] bucket = new int[k];
         int target = sum / k;
-
         return backtrack(nums, bucket, target, 0);
+
+//        boolean[] used = new boolean[nums.length];
+//        return backtreace(nums,0, k,target, used);
     }
 
     private boolean backtrack(int[] nums, int[] bucket, int target, int index) {
@@ -82,31 +84,32 @@ public class La3_LC698_M_划分为k个相等的子集 {
         int[] nums = {8, 2, 10, 2, 5, 6, 8, 6, 4, 2, 8, 5, 8, 4, 2, 5};
         int k = 5;
         System.out.println(new La3_LC698_M_划分为k个相等的子集().canPartitionKSubsets(nums, k));
+//        System.out.println(new La3_LC698_M_划分为k个相等的子集().canPartitionKSubsets(nums, k));
     }
 
 
-    private static boolean backtreace(int[] nums, int i, int k, int target, boolean[] used) {
+    private static boolean backtreace(int[] nums, int cur, int k, int target, boolean[] used) {
         if (k == 0) {
             return true;
         }
-        if (i == target) {
+        if (cur == target) {
             return backtreace(nums, 0, k-1, target,used);
         }
         for (int j = 0; j < nums.length; j++) {
             if(used[j]){
                 continue;
             }
-            if (nums[j] > target - i) {
+            if (nums[j] > target - cur) {
                 break;
             }
             used[j] = true;
-            i += nums[j];
-            boolean backtreace = backtreace(nums, i, k, target, used);
+            cur += nums[j];
+            boolean backtreace = backtreace(nums, cur, k, target, used);
             if (backtreace) {
                 return true;
             }
             used[j] = false;
-            i -= nums[j];
+            cur -= nums[j];
         }
         return false;
     }

@@ -39,6 +39,7 @@ public class La3_LC416_M_分割等和子集 {
             for (int j = 1; j <= sum; j++) {
                 if (j - nums[i - 1] >= 0) {
                     // 这里用 ||的原因时存在有true的可能就行，即有可能装到0，无论是装与不装
+                    // 这里是dp[i-1]是因为数字也不可重复
                     dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i - 1]];
                 } else {
                     dp[i][j] = dp[i - 1][j];
