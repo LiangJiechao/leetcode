@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，
- * 使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+ * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，
+ * 使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
  * 注意：答案中不可以包含重复的三元组。
  * <p>
  * 输入：nums = [-1,0,1,2,-1,-4]
@@ -24,7 +24,7 @@ public class LC15_M_三数之和 {
 
     /**
      * nums为排序数组
-     * 从start位置开始，找两数之和为target的数对
+     * 从start位置开始，找两数之和为target的数对1
      *
      * @param nums
      * @param start
@@ -39,7 +39,6 @@ public class LC15_M_三数之和 {
         // nums为排序数组
         int left = start;
         int right = nums.length - 1;
-
         while (left < right) {
             int leftNum = nums[left];
             int rightNum = nums[right];

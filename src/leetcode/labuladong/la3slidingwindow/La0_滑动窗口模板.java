@@ -12,9 +12,11 @@ package leetcode.labuladong.la3slidingwindow;
  *     while(window[c]>1){
  *         left++;
  *     }
+ *
  *     统计结果
  *     res = Math.max(res,right-left)
  * }
+ * 三步走：右边无脑向右移，判断窗口是否收缩，统计结果
  * @author xiaoliang
  * @date 2022/03/18 22:16
  **/

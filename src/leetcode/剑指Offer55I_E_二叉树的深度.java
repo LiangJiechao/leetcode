@@ -13,7 +13,7 @@ import java.util.Queue;
  * 9  20
  * /  \
  * 15   7
- * 返回它的最大深度 3 。
+ * 返回它的最大深度 3 。
  *
  * @author xiaoliang
  * @date 2021/12/14 15:23

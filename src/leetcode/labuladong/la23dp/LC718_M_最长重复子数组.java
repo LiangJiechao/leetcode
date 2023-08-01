@@ -5,6 +5,8 @@ package leetcode.labuladong.la23dp;
  * 输入：nums1 = [1,2,3,2,1], nums2 = [3,2,1,4,7]
  * 输出：3
  * 解释：长度最长的公共子数组是 [3,2,1] 。
+ *
+ * 也是最长重复子串
  * @author xiaoliang
  * @date 2022/04/01 10:52
  **/

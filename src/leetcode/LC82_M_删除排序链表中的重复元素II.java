@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除链表中所有存在数字重复情况的节点，只保留原始链表中 没有重复出现 的数字。
+ * 存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除链表中所有存在数字重复情况的节点，只保留原始链表中 没有重复出现 的数字。
  * 返回同样按升序排列的结果链表。
  * <p>
  * 输入：head = [1,2,3,3,4,4,5]
@@ -45,23 +45,19 @@ public class LC82_M_删除排序链表中的重复元素II {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode dummy = new ListNode();
-        ListNode pre = dummy;
-        ListNode cur = head;
-        while (cur != null && cur.next != null) {
-            if (cur.val == cur.next.val) {
-                while (cur.next != null && cur.val == cur.next.val) {
-                    cur = cur.next;
+        ListNode dummy = new ListNode(-200);
+        dummy.next = head;
+        ListNode cur = dummy;
+
+        while (cur.next != null && cur.next.next != null) {
+            if (cur.next.val == cur.next.next.val) {
+                int val = cur.next.val;
+                while (cur.next != null && cur.next.val == val) {
+                    cur.next = cur.next.next;
                 }
-                cur = cur.next;
+
             } else {
-                pre.next = cur;
                 cur = cur.next;
-                pre = pre.next;
-                if (cur.next != null) {
-                    // 不是最后一个节点
-                    pre.next = null;
-                }
             }
         }
 
@@ -115,7 +111,7 @@ public class LC82_M_删除排序链表中的重复元素II {
         head.next.next.next.next = new ListNode(4);
         head.next.next.next.next.next = new ListNode(4);
         head.next.next.next.next.next.next = new ListNode(5);
-        deleteDuplicates(head);
+        deleteDuplicates2(head);
 
     }
 

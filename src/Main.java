@@ -4,6 +4,9 @@ public class Main {
     public static void main(String[] args) throws NoSuchMethodException,
             InvocationTargetException, IllegalAccessException,
             CloneNotSupportedException {
+
+
+
 //        Address s = new Address("天津");
 //        Person p = new Person("张三", 23, s);
 //        System.out.println("克隆前的地址：" + p.getAddress().getName());

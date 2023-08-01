@@ -25,7 +25,7 @@ import java.util.Queue;
  * 3   3
  * / \
  * 4   4
- * 返回 false 。
+ * 返回 false 。
  *
  * @author xiaoliang
  * @date 2021/12/14 15:33

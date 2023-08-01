@@ -3,8 +3,8 @@ package leetcode.labuladong.la23dp.sanyedp;
 import java.util.Arrays;
 
 /**
- * 给你一个 互不相同 的整数数组，其中 locations[i] 表示第 i 个城市的位置。
- * 同时给你 start，finish 和 fuel 分别表示出发城市、目的地城市和你初始拥有的汽油总量
+ * 给你一个 互不相同 的整数数组，其中 locations[i] 表示第 i 个城市的位置。
+ * 同时给你 start，finish 和 fuel 分别表示出发城市、目的地城市和你初始拥有的汽油总量
  * <p>
  * 输入：locations = [2,3,6,8,4], start = 1, finish = 3, fuel = 5
  * 输出：4

@@ -44,7 +44,7 @@ public class Code06_QuickSort {
             }
             arr[L] = arr[R];
 
-            while (L < R && arr[L] < pivot) {
+            while (L < R && arr[L] <= pivot) {
                 L++;
             }
             arr[R] = arr[L];
